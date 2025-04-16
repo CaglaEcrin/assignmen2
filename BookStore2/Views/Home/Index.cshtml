@@ -1,0 +1,45 @@
+﻿@model HomePageViewModel
+
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Kitapçımıza Hoş geldiniz</h1>
+</div>
+<h3> Yeni Gelenler </h3>
+<div class="row">
+    <div class="col-md-12">
+        @foreach(var item in Model.NewBooks) {
+            <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="...." alt="Book Image">
+        <div class="card-body">
+            <h5></h5> 
+        </div>
+        <div class="card-body"> @item.Description</div>
+    </div>   
+            
+
+            
+        }
+    </div>
+    
+    
+</div>
+
+<div class="row">
+    <div class="col-12">
+        @foreach (var item in Model.MostViewBook)
+        {
+            <div class="card">
+                <div class="card-header"> @item.Title</div>
+                <div class="card-body"> @item.Description</div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
